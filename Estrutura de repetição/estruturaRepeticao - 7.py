@@ -7,3 +7,12 @@
 # 2 x 2 = 4
 # [...]
 # 2 x 10 = 20
+
+i = 0
+
+numTab = int(input('Digite um número que deseja saber a tabuada: '))
+
+print(f'Tabuada do {numTab}')
+while i != 11:
+    print(f'{numTab} x {i} = {numTab*i}')
+    i += 1
