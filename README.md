@@ -2,9 +2,8 @@
 
 Este repositório contém uma coleção de exercícios de Python que resolvi para consolidar meu aprendizado da linguagem. Aqui você encontrará soluções para diversos problemas, desde os mais básicos até desafios mais complexos.
 
-## Objetivo deste repositório
+## Objetivo deste repositório:
 
-- **Compartilhar minhas soluções:** Espero que minhas soluções possam ajudar outros estudantes a aprender e praticar Python.
 - **Documentar meu progresso:** Manter um registro dos exercícios que resolvi e das técnicas que aprendi.
 - **Aprimorar minhas habilidades:** Revisitar o código e procurar maneiras de otimizar as soluções.
 
