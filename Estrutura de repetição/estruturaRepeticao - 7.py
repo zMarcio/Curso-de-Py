@@ -1,18 +1,25 @@
-# Momento dos projetos
-# 6) Escreva um programa que gere a tabuada de um número inteiro de 1 a 10, de acordo com a escolha da pessoa usuária. Como exemplo, para o número 2, a tabuada deve ser mostrada 
-# no seguinte formato:
+# 7) Os números primos possuem várias aplicações dentro da Ciência de Dados em criptografia e segurança, por exemplo. Um número primo é aquele 
+# que é divisível apenas por um e por ele mesmo. Assim, faça um programa que peça um número inteiro e determine se ele é ou não um número primo.
 
-# Tabuada do 2:
-# 2 x 1 = 2
-# 2 x 2 = 4
-# [...]
-# 2 x 10 = 20
 
-i = 0
 
-numTab = int(input('Digite um número que deseja saber a tabuada: '))
+digaNum = int(input('Diga seu número: '))
 
-print(f'Tabuada do {numTab}')
-while i != 11:
-    print(f'{numTab} x {i} = {numTab*i}')
-    i += 1
+listNums = [1,2,3,4,5,6,7,8,9,10,digaNum]
+listNumsDiv = []
+for i in listNums:
+    if digaNum % i == 0 :
+        listNumsDiv.append(i)
+
+    
+
+print(len(listNumsDiv))
+
+if len(listNumsDiv) > 2:
+    print('Número não é primo')
+else:
+    print('É primo')
+    
+
+# listNumsDiv.append(12)
+# print(len(listNumsDiv))

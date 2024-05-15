@@ -1,25 +1,16 @@
-# 7) Os números primos possuem várias aplicações dentro da Ciência de Dados em criptografia e segurança, por exemplo. Um número primo é aquele 
-# que é divisível apenas por um e por ele mesmo. Assim, faça um programa que peça um número inteiro e determine se ele é ou não um número primo.
+# # 8) Vamos entender a distribuição de idades de pensionistas de uma empresa de previdência. Escreva um programa que leia as idades de 
+# uma quantidade não informada de clientes e mostre a distribuição em intervalos de [0-25], [26-50], [51-75] e [76-100]. Encerre a entrada de dados com um número negativo.
 
 
+entrada = int(input('Diga sua idade: '))
 
-digaNum = int(input('Diga seu número: '))
-
-listNums = [1,2,3,4,5,6,7,8,9,10,digaNum]
-listNumsDiv = []
-for i in listNums:
-    if digaNum % i == 0 :
-        listNumsDiv.append(i)
-
-    
-
-print(len(listNumsDiv))
-
-if len(listNumsDiv) > 2:
-    print('Número não é primo')
+if entrada > 0 and entrada < 25:
+    print(f'Idade: {entrada} [0-25]')
+if entrada > 26 and entrada < 50:
+    print(f'Idade: {entrada} [26-50]')
+if entrada > 51 and entrada < 75:
+    print(f'Idade: {entrada} [51-75]')
+if entrada > 76 and entrada < 100:
+    print(f'Idade: {entrada} [76-100]')
 else:
-    print('É primo')
-    
-
-# listNumsDiv.append(12)
-# print(len(listNumsDiv))
+    print('Fora do escopo!')

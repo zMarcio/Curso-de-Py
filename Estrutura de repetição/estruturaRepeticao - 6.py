@@ -1,19 +1,18 @@
-# 5) Escreva um programa que calcule o fatorial de um número inteiro fornecido pela pessoa usuária. Lembrando que o fatorial de um número inteiro é a multiplicação desse 
-# número por todos os seus antecessores até o número 1. Por exemplo, o fatorial de 5 é 5 x 4 x 3 x 2 x 1 = 120.
+# Momento dos projetos
+# 6) Escreva um programa que gere a tabuada de um número inteiro de 1 a 10, de acordo com a escolha da pessoa usuária. Como exemplo, para o número 2, a tabuada deve ser mostrada 
+# no seguinte formato:
 
-fat = 1
+# Tabuada do 2:
+# 2 x 1 = 2
+# 2 x 2 = 4
+# [...]
+# 2 x 10 = 20
 
-fat1 = int(input('Diga seu fatorial: '))
+i = 0
 
-aux = fat1
+numTab = int(input('Digite um número que deseja saber a tabuada: '))
 
-while aux != 0:
-    fat += fat * (aux - 1)
-    aux -= 1
-
-
-
-print(fat)
-    
-    
-
+print(f'Tabuada do {numTab}')
+while i != 11:
+    print(f'{numTab} x {i} = {numTab*i}')
+    i += 1

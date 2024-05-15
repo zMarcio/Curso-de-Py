@@ -1,13 +1,20 @@
-# 3) Para tratar uma quantidade de 15 dados de avaliações de pessoas usuárias de um serviço da empresa, precisamos verificar se as notas são válidas.
-#  Então, escreva um programa que vai receber a nota de 0 a 5 de todos os dados e verificar se é um valor válido. Caso seja inserido uma nota acima de 5 ou abaixo de 0, repita até que a 
-# pessoa usuária insira um valor válido.
+# 4) Desenvolva um programa que leia um conjunto indeterminado de temperaturas em Celsius e informe a média delas.
+#  A leitura deve ser encerrada ao ser enviado o valor -273°C.
 
-dados = 0
 
-while dados != 15:
-    nota = int(input('Digite sua nota: '))
-    if 0 <= nota and nota <= 5:
-        print(nota)
-        dados+=1
-    else:
-        continue
+temperatura = 0
+list_temp = []
+while temperatura != -273:
+    temperatura = float(input('Digite uma temperatura'))
+    if temperatura == -273:
+        print('ixi bateu -273')
+        break
+    list_temp.append(temperatura)
+
+temperatura = 0
+
+for i in list_temp:
+    temperatura += i
+    print(temperatura)
+temperatura /= len(list_temp)
+print(temperatura)

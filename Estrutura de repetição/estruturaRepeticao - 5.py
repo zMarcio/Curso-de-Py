@@ -1,20 +1,19 @@
-# 4) Desenvolva um programa que leia um conjunto indeterminado de temperaturas em Celsius e informe a média delas.
-#  A leitura deve ser encerrada ao ser enviado o valor -273°C.
+# 5) Escreva um programa que calcule o fatorial de um número inteiro fornecido pela pessoa usuária. Lembrando que o fatorial de um número inteiro é a multiplicação desse 
+# número por todos os seus antecessores até o número 1. Por exemplo, o fatorial de 5 é 5 x 4 x 3 x 2 x 1 = 120.
+
+fat = 1
+
+fat1 = int(input('Diga seu fatorial: '))
+
+aux = fat1
+
+while aux != 0:
+    fat += fat * (aux - 1)
+    aux -= 1
 
 
-temperatura = 0
-list_temp = []
-while temperatura != -273:
-    temperatura = float(input('Digite uma temperatura'))
-    if temperatura == -273:
-        print('ixi bateu -273')
-        break
-    list_temp.append(temperatura)
 
-temperatura = 0
+print(fat)
+    
+    
 
-for i in list_temp:
-    temperatura += i
-    print(temperatura)
-temperatura /= len(list_temp)
-print(temperatura)
