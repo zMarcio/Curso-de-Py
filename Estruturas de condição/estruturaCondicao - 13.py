@@ -1,15 +1,15 @@
-lado1 = int(input('Digite o primeiro lado: '))
-lado2 = int(input('Digite o segundo lado: '))
-lado3 = int(input('Digeite o terceiro lado: '))
+ano22 = int(input('Vendas 22: '))
+ano23 = int(input('Vendas 23: '))
 
-sumlds = lado1 + lado2
+result = -1 * (ano22 - (ano23*100)/ano22)
 
-if lado3 < sumlds:
-    if lado1 == lado2 == lado3:
-        print('Equilatero')
-    elif lado1 == lado2 or lado2 == lado3 or lado1 == lado3:
-        print('Isósceles')
-    else:
-        print('Escaleno')
+# print(result)
+
+if result > 20:
+    print('bonificação para o time de vendas.')
+elif result <= 20 and result >= 2:
+    print('pequena bonificação para time de vendas.')
+elif result >= -10 and result < 2:
+    print('planejamento de políticas de incentivo às vendas.')
 else:
-    print('Triangulo inválido')
+    print('corte de gastos.')

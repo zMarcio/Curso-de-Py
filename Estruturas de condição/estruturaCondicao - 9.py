@@ -1,8 +1,8 @@
-turno = input('Digite o horário que você estuda: ').strip().lower()
+numInteiroOrDecimal = input('Digite um numero')
 
-if 'manhã' in turno or 'manha' in turno:
-    print('Bom dia!')
-elif 'tarde' in turno:
-    print('Boa tarde!')
-elif 'noite' in turno:
-    print('Boa noite!')
+if '.' not in numInteiroOrDecimal:
+    print("inteiro")
+elif '.0' in numInteiroOrDecimal:
+    print('inteiro')
+else:
+    print('decimal')

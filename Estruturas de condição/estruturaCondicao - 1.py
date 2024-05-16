@@ -1,7 +1,7 @@
-var = 1
+num1 = int(input('Digite um número: '))
+num2 = int(input('Digite um segundo número: '))
 
-if var > 0:
-    print('passei no 1')
-elif var > -1:
-    print('passei no 2')
-
+if num1 > num2:
+    print(num1)
+elif num2 > num1:
+    print(num2)

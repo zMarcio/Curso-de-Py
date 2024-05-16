@@ -1,11 +1,70 @@
-numInteiro = int(input('Digite um numero: '))
+num1 = float(input('Digite um numero: '))
+num2 = float(input('Digite um segundo numero: '))
 
-if numInteiro % 2 == 0:
-    print(f'Par: {numInteiro}')
-else:
-    print(f'Impar: {numInteiro}')
+op = input('Digite qual operação você deseja fazer(+, -, *, /): ').strip()
 
-print('-'*20)
-testing = int(input('num ').split('.')[0])
 
-print(testing)
+if '+' in op:
+    op2 = num1 + num2
+    if op2 < 0 and op2 % 1 == 0 and op2 % 2 == 0:
+        print(f'Operação escolhida: {op}, numeros: {num1} e {num2}, Resultado: {op2}, então ele é par, inteiro e negativo')
+    elif op2 < 0 and op2 % 1 != 0:
+        print(f'Operação escolhida: {op}, numeros: {num1} e {num2}, Resultado: {op2}, então ele é impar, decimal e negativo')
+    elif op2 < 0 and op2 % 1 == 0 and op2 % 2 != 0:
+        print(f'Operação escolhida: {op}, numeros: {num1} e {num2}, Resultado: {op2}, então ele é impar, inteiro e negativo')
+    elif op2 > 0 and op2 % 1 == 0 and op2 % 2 == 0:
+        print(f'Operação escolhida: {op}, numeros: {num1} e {num2}, Resultado: {op2}, então ele é par, inteiro e positivo')
+    elif op2 > 0 and op2 % 1 != 0:
+        print(f'Operação escolhida: {op}, numeros: {num1} e {num2}, Resultado: {op2}, então ele é impar, decimal e positivo')
+    elif op2 > 0 and op2 % 1 == 0 and op2 % 2 != 0:
+        print(f'Operação escolhida: {op}, numeros: {num1} e {num2}, Resultado: {op2}, então ele é impar, inteiro e positivo')
+
+if '-' in op:
+    op2 = num1 - num2
+    if op2 < 0 and op2 % 1 == 0 and op2 % 2 == 0:
+        print(f'Operação escolhida: {op}, numeros: {num1} e {num2}, Resultado: {op2}, então ele é par, inteiro e negativo')
+    elif op2 < 0 and op2 % 1 != 0:
+        print(f'Operação escolhida: {op}, numeros: {num1} e {num2}, Resultado: {op2}, então ele é impar, decimal e negativo')
+    elif op2 < 0 and op2 % 1 == 0 and op2 % 2 != 0:
+        print(f'Operação escolhida: {op}, numeros: {num1} e {num2}, Resultado: {op2}, então ele é impar, inteiro e negativo')
+    elif op2 > 0 and op2 % 1 == 0 and op2 % 2 == 0:
+        print(f'Operação escolhida: {op}, numeros: {num1} e {num2}, Resultado: {op2}, então ele é par, inteiro e positivo')
+    elif op2 > 0 and op2 % 1 != 0:
+        print(f'Operação escolhida: {op}, numeros: {num1} e {num2}, Resultado: {op2}, então ele é impar, decimal e positivo')
+    elif op2 > 0 and op2 % 1 == 0 and op2 % 2 != 0:
+        print(f'Operação escolhida: {op}, numeros: {num1} e {num2}, Resultado: {op2}, então ele é impar, inteiro e positivo')
+
+if '*' in op:
+    op2 = num1 * num2
+    if op2 < 0 and op2 % 1 == 0 and op2 % 2 == 0:
+        print(f'Operação escolhida: {op}, numeros: {num1} e {num2}, Resultado: {op2}, então ele é par, inteiro e negativo')
+    elif op2 < 0 and op2 % 1 != 0:
+        print(f'Operação escolhida: {op}, numeros: {num1} e {num2}, Resultado: {op2}, então ele é impar, decimal e negativo')
+    elif op2 < 0 and op2 % 1 == 0 and op2 % 2 != 0:
+        print(f'Operação escolhida: {op}, numeros: {num1} e {num2}, Resultado: {op2}, então ele é impar, inteiro e negativo')
+    elif op2 > 0 and op2 % 1 == 0 and op2 % 2 == 0:
+        print(f'Operação escolhida: {op}, numeros: {num1} e {num2}, Resultado: {op2}, então ele é par, inteiro e positivo')
+    elif op2 > 0 and op2 % 1 != 0:
+        print(f'Operação escolhida: {op}, numeros: {num1} e {num2}, Resultado: {op2}, então ele é impar, decimal e positivo')
+    elif op2 > 0 and op2 % 1 == 0 and op2 % 2 != 0:
+        print(f'Operação escolhida: {op}, numeros: {num1} e {num2}, Resultado: {op2}, então ele é impar, inteiro e positivo')
+
+if '/' in op:
+    if num1 == 0:
+        print(f'Operação escolhida: {op}, numeros: {num1} e {num2}, Resultado: 0')
+    if num2 == 0:
+        print('Denominador é 0, impossivel a solução')
+        exit()
+    op2 = num1 / num2
+    if op2 < 0 and op2 % 1 == 0 and op2 % 2 == 0:
+        print(f'Operação escolhida: {op}, numeros: {num1} e {num2}, Resultado: {op2}, então ele é par, inteiro e negativo')
+    elif op2 < 0 and op2 % 1 != 0:
+        print(f'Operação escolhida: {op}, numeros: {num1} e {num2}, Resultado: {op2}, então ele é impar, decimal e negativo')
+    elif op2 < 0 and op2 % 1 == 0 and op2 % 2 != 0:
+        print(f'Operação escolhida: {op}, numeros: {num1} e {num2}, Resultado: {op2}, então ele é impar, inteiro e negativo')
+    elif op2 > 0 and op2 % 1 == 0 and op2 % 2 == 0:
+        print(f'Operação escolhida: {op}, numeros: {num1} e {num2}, Resultado: {op2}, então ele é par, inteiro e positivo')
+    elif op2 > 0 and op2 % 1 != 0:
+        print(f'Operação escolhida: {op}, numeros: {num1} e {num2}, Resultado: {op2}, então ele é impar, decimal e positivo')
+    elif op2 > 0 and op2 % 1 == 0 and op2 % 2 != 0:
+        print(f'Operação escolhida: {op}, numeros: {num1} e {num2}, Resultado: {op2}, então ele é impar, inteiro e positivo')

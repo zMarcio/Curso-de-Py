@@ -1,19 +1,20 @@
+num1 = int(input('Digite o preço do 1 numero: '))
+num2 = int(input('Digite o preço do 2 numero: '))
+num3 = int(input('Digite o preço do 3 numero: '))
 
-ano1 = float(input('Digite o preço do ano 1: '))
-ano2 = float(input('Digite o preço do ano 2: '))
-ano3 = float(input('Digite o preço do ano 3: '))
+if num3 >= num2 and num3 >= num1:
+    if num2 >= num1:
+        print(f'Decrescente: {num3} {num2} {num1}')
+    else:
+        print(f'Decrescente: {num3} {num1} {num2}')
+elif num2 >= num3 and num2 >= num1:
+    if num3 >= num1:
+        print(f'Decrescente: {num2} {num3} {num1}')
+    else:
+        print(f'Decrescente: {num2} {num1} {num3}')
+elif num1 >= num3 and num1 >= num2:
+    if num3 >= num2:
+        print(f'Decrescente: {num1} {num3} {num2}')
+    else:
+        print(f'Decrescente: {num1} {num2} {num3}')
 
-if ano1 > ano2 and ano1 > ano3:
-    print(f"carro mais caro {ano1}")
-elif ano2 > ano1 and ano2 > ano3:
-    print(f"carro mais caro {ano2}")
-elif ano3 > ano2 and ano3 > ano1:
-    print(f"carro mais caro {ano3}")
-elif ano1 < ano2 and ano1 < ano3:
-    print(f"carro mais barato {ano1}")
-elif ano2 < ano1 and ano2 < ano3:
-    print(f"carro mais barato {ano2}")   
-elif ano3 < ano2 and ano3 < ano1:
-    print(f"carro mais barato {ano3}")
-else:
-    print(f'Não houve alteração do valor, aqui eles ano 1: {ano1}, ano 2: {ano2} e ano 3: {ano3}')
