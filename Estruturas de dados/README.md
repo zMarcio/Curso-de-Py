@@ -1,8 +1,8 @@
-**Examples**
+###Examples
 
-1 - Uso do Split em string
-2 - Uso do join em listas
-3 - Controlando listas, com metodos do py
+**1 - Uso do Split em string**
+**2 - Uso do join em listas**
+**3 - Controlando listas, com metodos do py**
 
 
 # Lista de Exercícios de Programação
