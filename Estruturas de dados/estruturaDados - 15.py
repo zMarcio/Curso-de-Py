@@ -25,6 +25,7 @@ setAll = []
 
 minp = 0
 med = 0
+med_total = 0
 maxp = 0
 med_div = 0
 for i,ii in idades.items():
@@ -32,10 +33,19 @@ for i,ii in idades.items():
         maxp = max(ii) 
         minp = min(ii)
         med += a
+        med_total += a
     med_div = len(ii)
     med = med/med_div
     setAll.append([i,maxp,minp,med])
     med = 0
 
+acima_med = 0
+for i, ii in idades.items():
+    for ia in ii:
+        if ia > (med_total/40):
+            acima_med += 1
+
+
 for i in range(len(setAll)):
     print(f'Idade média do setor {setAll[i][0]}, a Média: {setAll[i][3]}, o mais velho tem essa idade {setAll[i][1]} e o mais jovem tem {setAll[i][2]}.')
+print(f'Média geral {med_total/40} e pessoa acima da média {acima_med}')
