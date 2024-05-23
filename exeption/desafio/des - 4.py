@@ -7,8 +7,8 @@
 # frase: 'A quantidade de elementos em cada lista é diferente.' Dados para testar a função:
 
 # Valores sem erro:
-# lista1 = [4,6,7,9,10]
-# lista2 = [-4,6,8,7,9]
+lista1 = [4,6,7,9,10]
+lista2 = [-4,6,8,7,9]
 
 # Listas com tamanhos diferentes:
 # lista1 = [4,6,7,9,10,4]
@@ -17,3 +17,17 @@
 # Listas com valores incoerentes:
 # lista1 = [4,6,7,9,'A']
 # lista2 = [-4,'E',8,7,9]
+
+def fun_sum(lista1,lista2):
+    if len(lista1) != len(lista2):
+        raise Exception("A quantidade de elementos em cada lista é diferente.")
+    try:
+        newList = [(i,p,i+p) for i,p in zip(lista1,lista2)]
+    except Exception as e:
+        print(f'Error: {e.__class__.__name__}')
+    else:
+        # print('oi')
+        return newList
+    
+
+print(fun_sum(lista1,lista2))
