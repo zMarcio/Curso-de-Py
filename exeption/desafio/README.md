@@ -1,7 +1,3 @@
-Aqui estão os desafios reformulados para um repositório no GitHub, sem incluir as soluções:
-
----
-
 ### Desafios de Programação
 
 1. **Divisão de Números Float**
