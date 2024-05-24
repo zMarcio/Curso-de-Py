@@ -23,3 +23,20 @@ lista_tratada = ['Python', 'é', 'uma', 'linguagem', 'de', 'programação', 'pod
 lista_nao_tratada = ['Python', 'é', 'uma', 'linguagem', 'de', 'programação', 'poderosa,', 'versátil',
                   'e', 'fácil,', 'de', 'aprender', 'utilizada', 'em', 'diversos', 'campos,', 'desde',
                   'análise', 'de', 'dados', 'até', 'inteligência', 'artificial!']
+
+
+
+def tratamentoString(lista):
+    try:
+        for i in lista:
+            for p in i:
+                if '!' in p or '?' in p or ',' in p or '.' in p:
+                    raise Exception(f'O texto apresenta pontuações na palavra "{p}".')
+    except Exception as e:
+        print(e)
+    else:
+        return 'Texto já tratado'
+
+print(tratamentoString(lista_tratada))
+print('-'*50)
+print(tratamentoString(lista_nao_tratada))
