@@ -9,8 +9,8 @@
 # Como teste, use os seguintes dados:
 
 # Dados sem exceção:
-# pressoes = [100, 120, 140, 160, 180]
-# temperaturas = [20, 25, 30, 35, 40]
+pressoes = [100, 120, 140, 160, 180]
+temperaturas = [20, 25, 30, 35, 40]
 
 # Dados com exceção:
 # 1) Exceção de ZeroDivisionError
@@ -22,3 +22,21 @@
 
 # pressoes = [100, 120, 140, 160]
 # temperaturas = [20, 25, 30, 35, 40]
+
+
+def condiPesquisa(lista1,lista2):
+    result = []
+    try:
+        if len(lista1) != len(lista2):
+            raise Exception(f'ValueError, listas com tamanho diferentes')
+        for i,p in zip(lista1,lista2):
+            if p == 0:
+                raise Exception(f'ZeroDivisionError, há uma divisão por zero')
+            result.append((i,p,round(i/p,2)))
+    except Exception as e:
+        print(e)
+    else:
+        return result
+    
+
+print(condiPesquisa(pressoes,temperaturas))
