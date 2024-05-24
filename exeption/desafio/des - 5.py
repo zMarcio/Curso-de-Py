@@ -19,3 +19,38 @@
 
 # Notas com exceção:
 # testes_com_ex = [['D', 'A', 'B', 'C', 'A'], ['C', 'A', 'A', 'E', 'A'], ['D', 'B', 'A', 'C', 'A']]
+
+def calcNota(lista):
+    list_newNotas = []
+    list_Alternativas = ['A', 'B', 'C', 'D']
+    dic_Corretas = {
+        0: 'D',
+        1: 'A',
+        2: 'B',
+        3: 'C',
+        4: 'A'
+    }
+    
+    try:
+        for i in lista:
+            x = 0
+            nota_Usuário = 0
+            for p in i:
+                if p not in list_Alternativas:
+                    raise Exception(f'A alternativa {p} não é uma opção de alternativa válida')
+                elif p == dic_Corretas[x]:
+                    nota_Usuário += 2
+                x += 1
+            list_newNotas.append((i, nota_Usuário))
+    except Exception as e:
+        print(e)
+    else:
+        return list_newNotas
+
+# Exemplos de testes
+testes_sem_ex = [['D', 'A', 'B', 'C', 'A'], ['C', 'A', 'A', 'C', 'A'], ['D', 'B', 'A', 'C', 'A']]
+testes_com_ex = [['D', 'A', 'B', 'C', 'A'], ['C', 'A', 'A', 'E', 'A'], ['D', 'B', 'A', 'C', 'A']]
+
+# Testando a função
+print(calcNota(testes_sem_ex))  # Deve retornar a lista com notas sem exceções
+print(calcNota(testes_com_ex))  # Deve imprimir a exceção e não retornar a lista de notas
