@@ -39,26 +39,26 @@ Moscow_ano4 = Moscow[36:48]
 # Dados dos anos:
 data_ano = np.arange(1,13,1)
 
+# Junta todos os dados para verificar junto, comparando um com outro no gráfico
 plt.plot(data_ano,Moscow_ano1)
 plt.plot(data_ano,Moscow_ano2)
 plt.plot(data_ano,Moscow_ano3)
 plt.plot(data_ano,Moscow_ano4)
-plt.show()
+# Uma legenda dizendo o que representa cada linha
+plt.legend(['ano - 1', 'ano - 2', 'ano - 3', 'ano - 4'])
+# Aqui mostra o gráfico
+# plt.show()
 
+# Verifica se os arrays são iguais
+# print(np.array_equal(Moscow_ano3,Moscow_ano4))
+
+# Verifica se tem valores proximos, ou diferença grande de um para outro
+print(np.allclose(Moscow_ano3,Moscow_ano4,10))
+
+# # Cidades do documento
 # Kaliningrad = precos[:,1]
 # Peterburg = precos[:,2]
 # Krasnodar = precos[:,3]
 # Ekaterinbug = precos[:,4]
 
-# # Visualização dos dados por gráfico
-# plt.plot(datas,Moscow)
-# plt.show()
-# plt.plot(datas,Kaliningrad)
-# kali = plt.show()
-# plt.plot(datas,Peterburg)
-# pete = plt.show()
-# plt.plot(datas,Krasnodar)
-# kras = plt.show()
-# plt.plot(datas,Ekaterinbug)
-# eka = plt.show()
 
