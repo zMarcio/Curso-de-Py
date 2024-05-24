@@ -1,5 +1,3 @@
-# Desafios de Programação em Python
-
 ## Desafios
 
 1. **Escreva um código para instalar a versão 3.7.1 da biblioteca matplotlib.**
