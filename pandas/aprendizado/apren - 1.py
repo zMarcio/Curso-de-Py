@@ -82,3 +82,28 @@ df.Tipo.unique()
 df_preco_tipo = df.groupby('Tipo')[['Valor']].mean().sort_values('Valor')
 # # A baixo está fazendo o plot, para visualizar as informações em gráficos
 df_preco_tipo.plot(kind = 'barh', figsize = (14, 10), color = 'purple')
+
+df.Tipo.unique()
+
+# # Está contando quantos vezes aparece em nossa base dados os imoveis da coluna Tipo
+df.Tipo.value_counts()
+
+# # Trás em formato de percentual
+df.Tipo.value_counts(normalize=True)
+
+# # Irá converter o valor a baixo em um dataframe
+df.Tipo.value_counts(normalize=True).to_frame().sort_values('proportion')
+
+# # Criando um Gráfico que mostra a quantidade de vezes que um dado da coluna Tipo aparece, só que em forma de percentual
+df_percentual_tipo = df.Tipo.value_counts(normalize=True).to_frame().sort_values('proportion')
+df_percentual_tipo.plot(kind = 'bar', figsize = (14,10), color = 'green', xlabel = 'Tipos', ylabel = 'Percentual')
+
+# # Selecionando apenas os apartamentos
+# apt = ['Apartamento']
+# df.query('@apt in Tipo')
+# # Ou fazer assim
+df.query('Tipo == "Apartamento"')
+
+# # Atribui-se a query a variavel df e agora temos só os apartamentos
+df = df.query('Tipo == "Apartamento"')
+df.head()
