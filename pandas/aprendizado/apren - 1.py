@@ -32,3 +32,19 @@ print(dados[['Quartos','Valor']])
 
 # # Teste para ver se da para pegar só os 10 primeiros
 print(dados[['Quartos','Valor']].head(10))
+
+# # Calculando todos os valores da coluna valor
+dados['Valor'].mean()
+
+# # Fazendo agrupamento de colunas, no caso vai pegar pela coluna tipo, e fazer a media para outras colunas
+dados.groupby('Tipo').mean(numeric_only=True)
+
+# # Pega por tipo e faz a média, só que aqui coloca somente a coluna Valor
+dados.groupby('Tipo')['Valor'].mean()
+
+# # Organiza do menor para maior a partir da coluna pedida, no caso 'Valor'
+dados.groupby('Tipo')[['Valor']].mean().sort_values('Valor')
+
+# # Passando dados a uma variavel, depois plota ela, criando assim um gráfico.
+df_preco_tipo = dados.groupby('Tipo')[['Valor']].mean().sort_values('Valor')
+df_preco_tipo.plot(kind='barh', figsize= (14, 10), color='purple')
