@@ -48,3 +48,37 @@ dados.groupby('Tipo')[['Valor']].mean().sort_values('Valor')
 # # Passando dados a uma variavel, depois plota ela, criando assim um gráfico.
 df_preco_tipo = dados.groupby('Tipo')[['Valor']].mean().sort_values('Valor')
 df_preco_tipo.plot(kind='barh', figsize= (14, 10), color='purple')
+
+# # Iremos usar o metodo unique para verificar os tipos unicos de imoveis dentro da nossa base de dados
+dados.Tipo.unique()
+
+# # Vamos colocar aqui todos os tipos que são comerciais
+imoveis_Comerciais = ['Conjunto Comercial/Sala', 
+                      'Prédio Inteiro', 'Loja/Salão', 
+                      'Galpão/Depósito/Armazém', 
+                      'Casa Comercial', 'Terreno Padrão',
+                      'Loja Shopping/ Ct Comercial',
+                      'Box/Garagem', 'Chácara',
+                      'Loteamento/Condomínio', 'Sítio',
+                      'Pousada/Chalé', 'Hotel', 'Indústria']
+
+
+# # Pedimos aqui só os dados da tabela tipo que estão em imoveis_Comerciais
+dados.query('@imoveis_Comerciais in Tipo')
+
+# # Pedimos aqui todos os dados menos o de imoveis_Comerciais
+dados.query('@imoveis_Comerciais not in Tipo')
+
+
+# # Aqui colocamos esse dataframe dentro da variavel df
+df = dados.query('@imoveis_Comerciais not in Tipo')
+df.head()
+# # Verifica as propriedades que estão em tipo df
+df.Tipo.unique()
+
+
+
+# # Está passando a uma variavel os valores conseguidos devido ao filtragem realizado a cima
+df_preco_tipo = df.groupby('Tipo')[['Valor']].mean().sort_values('Valor')
+# # A baixo está fazendo o plot, para visualizar as informações em gráficos
+df_preco_tipo.plot(kind = 'barh', figsize = (14, 10), color = 'purple')
