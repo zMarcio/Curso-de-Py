@@ -64,12 +64,25 @@ Y = laranja_peso
 X = laranja_diamentro
 n = np.size(X)
 
-a = (n*np.sum(X*Y) - np.sum(X)*np.sum(Y))/(n*np.sum(X**2)-np.sum(X)**2)
-b = np.mean(Y) - a*np.mean(X)
+# a = (n*np.sum(X*Y) - np.sum(X)*np.sum(Y))/(n*np.sum(X**2)-np.sum(X)**2)
+# b = np.mean(Y) - a*np.mean(X)
+np.random.seed(16)
 
-y = a*X+b
+coef_Angular = np.random.uniform(low=0.10,high=0.90,size=100)
 
-plt.plot(X,y)
-plt.show()
+norma = np.array([])
+b = 17
+
+for i in range(100):
+    norma = np.append(norma,np.linalg.norm(Y - coef_Angular[i]*X+b))
+
+
+
+
+# plt.plot(X,y)
+# plt.show()
+
+
+
 
 

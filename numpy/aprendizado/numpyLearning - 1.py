@@ -115,11 +115,46 @@ a = (n * np.sum(X*Y) - np.sum(X) * np.sum(Y))/(n*np.sum(X**2) - np.sum(X)**2)
 # Coeficiente linear
 b = np.mean(Y) - a*np.mean(X)
 
-
+# Formula do Y para se traça um reta linear e gráfica nos dados que temos sobre Moscow
 y = a*X+b
-
+# Aqui criamos o valor médio
 print(np.linalg.norm(Moscow - y))
-plt.plot(X,y)
-plt.plot(100,100*a+b,'*r')
-plt.show()
+# Finalmente criamos o gráfico
+# plt.plot(X,y)
+# Marcamos uma meta futura com base na reta criada
+# plt.plot(100,100*a+b,'*r')
 
+# plt.show()
+
+
+
+
+# Começamos a testar sem a formula para encontrar um resultado ideal para se criar a reta
+# inteiro = np.random.randint(low=40,high=100,size=100)
+
+# comVirgula = np.random.uniform(low=0.10,high=0.90,size=100)
+
+
+# norma = np.array([])
+
+# for i in range(100):
+#     norma = np.append(norma, np.linalg.norm(Moscow-(comVirgula[i]*X+b)))
+
+
+# print(norma)
+
+
+# Criação de coeficientes angulares de forma padrão
+np.random.seed(84)
+comVirgula = np.random.uniform(low=0.10,high=0.90,size=100)
+print(comVirgula)
+norma = np.array([])
+
+for i in range(100):
+    norma = np.append(norma, np.linalg.norm(Moscow-(comVirgula[i]*X+b)))
+
+
+dados = np.column_stack([norma,comVirgula])
+print(dados.shape)
+
+np.savetxt('dados.csv',dados,delimiter=',')
