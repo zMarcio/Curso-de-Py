@@ -11,4 +11,13 @@
 4. Explore as colunas do DataFrame e analise os tipos dos dados presentes em cada coluna.
 
 ### Extra
-Calcule algumas estatísticas descritivas básicas dos dados do DataFrame (média, desvio padrão, etc). Dica: pesquise pelo método `describe`.
+
+5. Calcule algumas estatísticas descritivas básicas dos dados do DataFrame (média, desvio padrão, etc). Dica: pesquise pelo método `describe`.
+
+6. Calcular a média de quartos por apartamento;
+
+7. Conferir quantos bairros únicos existem na nossa base de dados;
+
+8. Analisar quais bairros possuem a média de valor de aluguel mais elevadas;
+
+9. Criar um gráfico de barras horizontais que apresente os 5 bairros com as médias de valores de aluguel mais elevadas.

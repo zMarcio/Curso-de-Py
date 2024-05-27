@@ -1,3 +1,5 @@
+# 2. Visualize as primeiras 7 linhas do DataFrame e as 5 últimas.
+
 import pandas as pd
 
 url = 'https://raw.githubusercontent.com/alura-cursos/pandas-conhecendo-a-biblioteca/main/desafios/alunos.csv'

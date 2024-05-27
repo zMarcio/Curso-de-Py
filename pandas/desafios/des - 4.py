@@ -1,3 +1,5 @@
+# 4. Explore as colunas do DataFrame e analise os tipos dos dados presentes em cada coluna.
+
 import pandas as pd
 
 url = 'https://raw.githubusercontent.com/alura-cursos/pandas-conhecendo-a-biblioteca/main/desafios/alunos.csv'

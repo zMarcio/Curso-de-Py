@@ -1,3 +1,5 @@
+# 3. Confira a quantidade de linhas e colunas desse DataFrame.
+
 import pandas as pd
 
 url = 'https://raw.githubusercontent.com/alura-cursos/pandas-conhecendo-a-biblioteca/main/desafios/alunos.csv'
