@@ -159,7 +159,7 @@ df.head()
 # df.query()
 
 # # Aqui temos uma reposta em boolean de quartos igual a 1
-df['Quartos'] == 1
+print(df['Quartos'] == 1)
 
 # # Vamos armazenar em variaveis a restrição
 selecao1 = df['Quartos'] == 1
@@ -178,4 +178,24 @@ df_filtro1 = df[selecao_final]
 
 selecao_filtro2 = (df['Quartos'] >= 2) & (df['Valor'] < 3000) & (df['Area'] > 70)
 df_filtro2 = df[selecao_filtro2]
-df_filtro2
+print(df_filtro2)
+
+# # Salvando o arquivo com nome e formato de minha escolha
+df.to_csv('dados_apartamentos.csv')
+
+# # Lendo o arquivo e percebendo que tem uma nova coluna com index, ficando
+# # assim duas colunas com index, fazendo com que eu deseje tirar
+pd.read_csv('dados_apartamentos.csv')
+
+# # Salvo novamente mas com index que já tinha dentro do df, colocando index=False
+df.to_csv('dados_apartamentos.csv', index=False)
+
+# # Salvo por cima novamente
+pd.read_csv('dados_apartamentos.csv')
+
+# # Lembro então que o arquivo inicial vem separado por ponto e virgula 
+# # e desejo deixar no padrão ao qual recebi, colocando sep=';'
+df.to_csv('dados_apartamentos.csv', index=False, sep=';')
+
+# # Aqui percebemos então que está certo e salvo da maneira que veio
+pd.read_csv('dados_apartamentos.csv')
