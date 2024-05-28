@@ -127,3 +127,28 @@ df.isnull().sum()
 # # Para colocar o valor para dentro do data frame tem que fazer a atribuição como está abaixo
 df = df.fillna(0)
 df.isnull().sum()
+
+# # Removendo dados incoerentes, no caso valor e condominio igual a zero
+df.query('Valor == 0 or Condominio == 0')
+
+# # Pegando os index para remove-lo da df
+df.query('Valor == 0 or Condominio == 0').index
+
+# # Armazeno os valores a uma variavel para fazer um drop retirando eles do df
+registro_a_remover = df.query('Valor == 0 or Condominio == 0').index
+
+# # Drop pode excluir tanto linhas quanto colunas, 
+# # no axis dentro dos parenteses é que especificamos qual tipo de dado quer remover, 
+# # se é de coluna ou de linha, 0 é linha e 1 é colunas. e o parametro inplace=True já aplica para o
+# # df sem ter de fazer df = ...
+df.drop(registro_a_remover, axis=0, inplace=True)
+
+# # Aqui podemos ver que há somente apartamento na coluna tipo, ou seja necessitamos retirar ele
+df.head()
+# # A confirmação
+df.Tipo.unique()
+
+# # Aqui dropamos a coluna apartamento
+df.drop('Tipo', axis=1,inplace=True)
+# # Ficando assim
+df.head()
