@@ -20,6 +20,5 @@ dados = pd.DataFrame([['Feira', 'Cebola', 2.5],
 
 
 print(dados)
-print('pós')
 dados.drop([2,5,8],axis=0,inplace=True)
 print(dados)
