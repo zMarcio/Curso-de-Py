@@ -107,3 +107,23 @@ df.query('Tipo == "Apartamento"')
 # # Atribui-se a query a variavel df e agora temos só os apartamentos
 df = df.query('Tipo == "Apartamento"')
 df.head()
+
+
+df_example = df.Tipo.value_counts(normalize=True).to_frame().sort_values('proportion')
+df_example.rename(columns={'proportion':'Percentuais'}, inplace=True)
+print(df_example)
+
+import numpy as np
+df = dados
+# # Função usada para saber quais valores é null retorando um valor True para null e false para diferente de null
+df.isnull()
+# # A função sum soma os valores nulos, fazendo assim saber quantos nulos existem
+np.sum(df.isnull())
+
+# # A função sum soma os valores nulos, fazendo assim saber quantos nulos existem
+df.isnull().sum()
+
+# # Valor que você substitui o valor null por um valor entre parenteses.
+# # Para colocar o valor para dentro do data frame tem que fazer a atribuição como está abaixo
+df = df.fillna(0)
+df.isnull().sum()
