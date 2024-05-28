@@ -152,3 +152,30 @@ df.Tipo.unique()
 df.drop('Tipo', axis=1,inplace=True)
 # # Ficando assim
 df.head()
+
+# # 1. Apartamentos que possuem 1 quarto e aluguel menor que R$ 1200;
+# # 2. Apartamentos que possuem pelo menos 2 quartos, aluguel menor que R$ 3000 e área maior que 70 m².
+# # Teremos que aplicar o filtro acima, então poderia se utilizar o query
+# df.query()
+
+# # Aqui temos uma reposta em boolean de quartos igual a 1
+df['Quartos'] == 1
+
+# # Vamos armazenar em variaveis a restrição
+selecao1 = df['Quartos'] == 1
+df[selecao1]
+
+# # Agora para a segundo requisão solicitada
+selecao2 = df['Valor'] < 1200
+df[selecao2]
+
+# # Resultado juntando as duas restrições
+selecao_final = (selecao1) & (selecao2)
+df[selecao_final]
+
+# # Aqui está o filtro 1, proposto lá no começo
+df_filtro1 = df[selecao_final]
+
+selecao_filtro2 = (df['Quartos'] >= 2) & (df['Valor'] < 3000) & (df['Area'] > 70)
+df_filtro2 = df[selecao_filtro2]
+df_filtro2
