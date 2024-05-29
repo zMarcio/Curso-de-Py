@@ -199,3 +199,26 @@ df.to_csv('dados_apartamentos.csv', index=False, sep=';')
 
 # # Aqui percebemos então que está certo e salvo da maneira que veio
 pd.read_csv('dados_apartamentos.csv')
+
+# # Começo de Manipulando dados, para isso necessito puxar novamente os dados, para que não tenha restrições impostas como fiz nas outras etapas.
+dados = pd.read_csv(url,sep=';')
+dados.head()
+
+# # Crio nessas linhas uma nova coluna com valor por mes gasto
+dados['Valor_por_mes'] = dados['Valor'] + dados['Condominio']
+dados.head()
+
+# # Crio a por ano
+dados['Valor_por_ano'] = (12 * dados['Valor_por_mes']) + dados['IPTU']
+dados.head()
+
+# # Descrevo o que tem em cada imovel
+dados['descricao'] = dados['Tipo'] + ' em ' + dados['Bairro'] + ' com ' + dados['Quartos'].astype(str) + ' quarto(s) ' + ' e ' + dados['Vagas'].astype(str) + ' vaga(s) de garagem'
+dados.head()
+
+# # Falo se tem suítes ou não em um apartamento
+dados['possui_suite'] = dados['Suites'].apply(lambda x : 'Sim' if x > 0 else 'Não')
+dados.head() 
+
+# # Finalmente salvo o arquivo em um novo csv
+dados.to_csv('dados_completos_dev.csv', index=False, sep=';')
