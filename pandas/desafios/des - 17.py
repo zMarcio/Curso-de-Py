@@ -5,7 +5,6 @@ uri = 'https://raw.githubusercontent.com/alura-cursos/pandas-conhecendo-a-biblio
 
 datas = pd.read_csv(uri,sep=',')
 
-datas = pd.read_csv(uri,sep=',')
 
 datas = datas.query('Notas == 7.0').replace(7.0,8.0)
 
