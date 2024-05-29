@@ -218,6 +218,10 @@ dados.head()
 
 # # Falo se tem suítes ou não em um apartamento
 dados['possui_suite'] = dados['Suites'].apply(lambda x : 'Sim' if x > 0 else 'Não')
+
+# dados.loc[dados['Suites'] > 1, 'possui_suite'] = 'Sim'
+# dados.loc[dados['Suites'] == 0, 'possui_suite'] = 'Nãao'
+
 dados.head() 
 
 # # Finalmente salvo o arquivo em um novo csv

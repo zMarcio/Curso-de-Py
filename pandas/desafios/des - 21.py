@@ -11,14 +11,15 @@ datas = pd.read_csv(uri,sep=',')
 
 datas['Notas'] = datas['Notas'].fillna(0)
 
-print(datas.loc[datas['Aprovado'] == False].head())
+# print(datas.loc[datas['Aprovado'] == False].head())
 
 datas['Pontos_extras'] = datas['Notas'] * 0.4
 
 datas['Notas_finais'] = datas['Notas'] + datas['Pontos_extras']
 
-condicao = datas['Notas_finais'] >=  6.0 
-
-datas.loc[datas['Notas_finais'] >=  6.0, 'Aprovado'] = True
+# # Pode se feito de duas maneiras:
+datas['Aprovado_finais'] = datas['Notas_finais'].apply(lambda x: True if x >= 6.0 else False)
+datas.loc[datas['Notas_finais'] >=  6.0, 'Aprovado_finais'] = True
+datas.loc[datas['Notas_finais'] <  6.0, 'Aprovado_finais'] = False
 
 print(datas.head())
