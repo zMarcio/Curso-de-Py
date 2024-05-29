@@ -22,10 +22,7 @@
 
 9. Criar um gráfico de barras horizontais que apresente os 5 bairros com as médias de valores de aluguel mais elevadas.
 
-10. Claro, aqui está o texto com o desafio, sem a resposta:
-
----
-
+10.
 ## Desafio: Remover Linhas com o Método `drop()` da Biblioteca Pandas
 
 Suponha que temos o seguinte DataFrame, salvo em uma variável chamada `dados`:
@@ -76,3 +73,50 @@ Qual dos códigos abaixo poderia ser utilizado para remover de forma permanente 
 16. Salve o DataFrame que possui apenas os alunos aprovados em um arquivo csv chamado "alunos_aprovados.csv".
 
 17. Ao conferir as notas dos alunos aprovados, notamos que algumas notas estavam incorretas. As alunas que tiraram nota 7.0, na verdade, tinham um ponto extra que não foi contabilizado. Sendo assim, substitua as notas 7.0 da base de dados por 8.0. Dica: pesquise pelo método replace.
+
+18.
+# Exemplo de DataFrame de Carros
+
+Suponha que temos o seguinte DataFrame, com informações referentes a alguns carros em venda:
+
+## Criação do DataFrame
+
+Utilize o seguinte código para criar o DataFrame:
+
+```python
+import pandas as pd
+
+dados = {
+    'Nome': ['Jetta', 'Passat', 'Crossfox', 'DS5', 'Fusca'],
+    'Motor': ['Motor 4.0 Turbo', 'Motor Diesel', 'Motor Diesel V8', 'Motor 2.0', 'Motor 1.6'],
+    'Ano': [2019, 2003, 1991, 2019, 1990],
+    'Quilometragem': [0.0, 5712.0, 37123.0, 0.0, 120000.0],
+    'Valor': [88000.0, 106000.0, 72000.0, 89000.0, 32000.0],
+    'IPVA': [2000.0, 5000.0, 1700.0, 2200.0, 1000.0],
+    'Desconto': [380.0, 450.0, 277.0, 400.0, 150.0]
+}
+
+df = pd.DataFrame(dados)
+```
+
+## DataFrame
+
+O DataFrame resultante é:
+
+| Nome     | Motor           | Ano  | Quilometragem | Valor  | IPVA | Desconto |
+| -------- | --------------- | ---- | ------------- | ------ | ---- | -------- |
+| Jetta    | Motor 4.0 Turbo | 2019 | 0.0           | 88000  | 2000 | 380      |
+| Passat   | Motor Diesel    | 2003 | 5712.0        | 106000 | 5000 | 450      |
+| Crossfox | Motor Diesel V8 | 1991 | 37123.0       | 72000  | 1700 | 277      |
+| DS5      | Motor 2.0       | 2019 | 0.0           | 89000  | 2200 | 400      |
+| Fusca    | Motor 1.6       | 1990 | 120000.0      | 32000  | 1000 | 150      |
+
+## Criação da Coluna "Valor_total"
+
+Precisamos criar uma coluna chamada `Valor_total` que possui o valor do carro, somado com o IPVA e subtraídos os valores de desconto. O código correto para a criação dessa coluna é:
+
+```python
+df['Valor_total'] = df['Valor'] + df['IPVA'] - df['Desconto']
+```
+
+Após a execução deste código, o DataFrame será atualizado com a nova coluna `Valor_total`.
