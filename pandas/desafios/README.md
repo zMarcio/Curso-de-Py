@@ -74,3 +74,5 @@ Qual dos códigos abaixo poderia ser utilizado para remover de forma permanente 
 15. Aplique um filtro que selecione apenas os alunos que foram aprovados.
 
 16. Salve o DataFrame que possui apenas os alunos aprovados em um arquivo csv chamado "alunos_aprovados.csv".
+
+17. Ao conferir as notas dos alunos aprovados, notamos que algumas notas estavam incorretas. As alunas que tiraram nota 7.0, na verdade, tinham um ponto extra que não foi contabilizado. Sendo assim, substitua as notas 7.0 da base de dados por 8.0. Dica: pesquise pelo método replace.
