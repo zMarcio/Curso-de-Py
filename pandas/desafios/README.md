@@ -66,3 +66,11 @@ dados = pd.DataFrame([['Feira', 'Cebola', 2.5],
 Qual dos códigos abaixo poderia ser utilizado para remover de forma permanente as linhas onde, na coluna "Local", temos "Supermercado"?
 
 11 e 12. Durante o desenvolvimento do nosso projeto, nós aplicamos alguns filtros na nossa base de dados e salvamos os DataFrames resultantes em diferentes variáveis, sendo elas: df_1 e df_2.
+
+13. Verifique se a base de dados possui dados nulos e, caso tenha, realize o tratamento desses dados nulos da forma que achar mais coerente com a situação.
+
+14. Os alunos "Alice" e "Carlos", não fazem mais parte da turma. Sendo assim, remova-os da base de dados.
+
+15. Aplique um filtro que selecione apenas os alunos que foram aprovados.
+
+16. Salve o DataFrame que possui apenas os alunos aprovados em um arquivo csv chamado "alunos_aprovados.csv".
