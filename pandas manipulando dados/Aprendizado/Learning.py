@@ -76,3 +76,44 @@ tabela_sumarizada
 gas_por_setor.swaplevel(0,1)
 
 gas_por_setor.swaplevel(0,1).groupby(level=0).idxmax()
+
+emissoes_por_ano
+
+emissoes_por_ano.groupby('Ano')[['Emissão']].mean().plot(figsize=(10,6));
+
+emissoes_por_ano.groupby('Ano')[['Emissão']].mean().idxmax()
+
+emissoes_por_ano.groupby(['Ano', 'Gás'])[['Emissão']].mean()
+
+media_emissao_anual = emissoes_por_ano.groupby(['Ano', 'Gás'])[['Emissão']].mean().reset_index()
+media_emissao_anual
+
+media_emissao_anual = media_emissao_anual.pivot_table(index = 'Ano', columns = 'Gás', values = 'Emissão')
+media_emissao_anual
+
+media_emissao_anual.plot(subplots = True, figsize=(10,40));
+
+
+gov_url = '/content/drive/MyDrive/Ciência de Dados/Data Science Alura/POP2022_Municipios.xls'
+
+testing = pd.read_excel(gov_url,header = 1, skipfooter = 34)
+
+testing
+
+testing.groupby('UF').sum(numeric_only=True)
+
+testing['POPULAÇÃO'].astype(int)
+
+testing[testing['POPULAÇÃO'].str.contains('\(', na=False)]
+
+testing = testing.assign(semparenteses = testing['POPULAÇÃO'].replace('\(\d{1,2}\)', '', regex=True), pop = lambda x : x.loc[:, 'semparenteses'].replace('\.','',regex=True))
+
+testing[testing['POPULAÇÃO'].str.contains('\(', na=False)]
+
+testing = testing.astype({'pop':'int64'})
+
+testing = testing.groupby('UF')[['pop']].sum(numeric_only=True).reset_index()
+testing
+
+emissao_estados = emissoes_por_ano[emissoes_por_ano['Ano'] == 2021].groupby('Estado')[['Emissão']].sum().reset_index()
+emissao_estados
