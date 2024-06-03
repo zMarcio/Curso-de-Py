@@ -117,3 +117,19 @@ testing
 
 emissao_estados = emissoes_por_ano[emissoes_por_ano['Ano'] == 2021].groupby('Estado')[['Emissão']].sum().reset_index()
 emissao_estados
+
+dados_agrupados = pd.merge(emissao_estados,testing, left_on='Estado',right_on='UF')
+dados_agrupados
+
+dados_agrupados.plot(x = 'pop', y='Emissão',kind = 'scatter', figsize=(8,6));
+
+import plotly.express as px
+
+px.scatter(data_frame = dados_agrupados, x = 'pop', y= 'Emissão', text = 'Estado', opacity= 0)
+
+dados_agrupados = dados_agrupados.assign(emissao_per_capita = dados_agrupados['Emissão']/dados_agrupados['pop']).sort_values('emissao_per_capita', ascending=False)
+dados_agrupados
+
+px.bar(data_frame = dados_agrupados, x = 'Estado', y='emissao_per_capita')
+
+px.scatter(data_frame = dados_agrupados, x = 'pop', y='Emissão', text = 'Estado', size = 'emissao_per_capita')
