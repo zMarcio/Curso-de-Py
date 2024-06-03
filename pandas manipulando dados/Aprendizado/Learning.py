@@ -35,3 +35,44 @@ colunas_emissao
 data.melt(id_vars = colunas_info, value_vars = colunas_emissao, var_name = 'Ano', value_name = 'Emissão')
 
 emissoes_por_ano = data.melt(id_vars = colunas_info, value_vars = colunas_emissao, var_name = 'Ano', value_name = 'Emissão')
+
+emissoes_por_ano.groupby('Gás')
+
+emissoes_por_ano.groupby('Gás').groups
+
+emissoes_por_ano.groupby('Gás').get_group('CO2 (t)')
+
+emissoes_por_ano.groupby('Gás')[['Emissão']].sum()
+
+emissao_por_gas = emissoes_por_ano.groupby('Gás')[['Emissão']].sum().sort_values('Emissão', ascending=False)
+emissao_por_gas
+
+emissao_por_gas.plot(kind = 'barh', figsize = (10,6))
+
+emissao_por_gas.iloc[0:9]
+
+print(f'A emissão de CO2 corresponde {float((emissao_por_gas.iloc[0:9].sum()/emissao_por_gas.sum()).iloc[0])*100:.2f} % de emissão de total de gases estufa no Brasil de 1970 a 2021')
+
+gas_por_setor = emissoes_por_ano.groupby(['Gás', 'Nível 1 - Setor'])[['Emissão']].sum()
+gas_por_setor
+
+gas_por_setor = emissoes_por_ano.groupby(['Gás', 'Nível 1 - Setor'])[['Emissão']].sum()
+gas_por_setor
+
+gas_por_setor.xs('CO2 (t)', level = 0).max()
+
+gas_por_setor.xs('CO2 (t)', level = 0).idxmax()
+
+gas_por_setor.groupby(level = 0).idxmax()
+
+gas_por_setor.groupby(level = 0).max()
+
+valores_max = gas_por_setor.groupby(level = 0).max().values
+
+tabela_sumarizada = gas_por_setor.groupby(level = 0).idxmax()
+tabela_sumarizada.insert(1,'Quantidade de emissão', valores_max)
+tabela_sumarizada
+
+gas_por_setor.swaplevel(0,1)
+
+gas_por_setor.swaplevel(0,1).groupby(level=0).idxmax()
