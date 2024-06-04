@@ -24,3 +24,6 @@ data_vendas.head()
 
 data_vendas['Data de venda'] = pd.to_datetime(data_vendas['Data de venda']).dt.strftime('%d/%m/%Y')
 data_vendas.head()
+
+total_compras = data_vendas.groupby(['Cliente'])['Valor da compra'].sum()
+total_compras
