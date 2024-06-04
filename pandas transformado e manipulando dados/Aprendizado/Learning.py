@@ -38,3 +38,22 @@ print(dados)
 
 dados['descricao_local'] = dados['descricao_local'].str.lower()
 dados.head()
+
+dados['descricao_local'] = dados['descricao_local'].str.replace('[^a-zA-Z0-9\-\']', ' ',regex=True)
+dados.head()
+
+dados['descricao_local'].str.replace('(?<!\w)-(?!\w)', ' ',regex=True)
+
+dados['descricao_local'] = dados['descricao_local'].str.split()
+dados.head()
+
+dados['comodidades'] = dados['comodidades'].str.replace('\{|}|\"', '' , regex=True)
+
+dados['comodidades'] = dados['comodidades'].str.split(',')
+dados['comodidades']
+
+dados['descricao_vizinhanca'] = dados['descricao_vizinhanca'].str.lower()
+dados['descricao_vizinhanca'] = dados['descricao_vizinhanca'].str.replace('[^a-zA-Z0-9\-\']', ' ',regex=True)
+dados['descricao_vizinhanca'] = dados['descricao_vizinhanca'].str.replace('(?<!\w)-(?!\w)', ' ',regex=True)
+dados['descricao_vizinhanca'] = dados['descricao_vizinhanca'].str.split()
+dados.head()
