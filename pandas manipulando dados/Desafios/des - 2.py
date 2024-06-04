@@ -10,3 +10,6 @@ colunas_emissao = list(data.loc[:,1970:2021].columns)
 emissoes_por_ano = data.melt(id_vars = colunas_info, value_vars = colunas_emissao, var_name = 'Ano', value_name = 'Emissão')
 
 emissoes_por_ano.groupby('Nível 1 - Setor').groups
+
+
+emissoes_por_ano.groupby('Nível 1 - Setor').get_group('Agropecuária')

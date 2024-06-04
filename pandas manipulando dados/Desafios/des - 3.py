@@ -1,11 +1,10 @@
 import pandas as pd
-url = '' # Fiz no google colab e o link é para meu drive
 
-# test = pd.ExcelFile(url).sheet_names
+url = '/content/drive/MyDrive/Ciência de Dados/Data Science Alura/1-SEEG10_GERAL-BR_UF_2022.10.27-FINAL-SITE.xlsx'
 
-# test
+data = pd.read_excel(url, sheet_name='GEE Estados',)
+colunas_info = list(data.loc[:,'Nível 1 - Setor':'Produto'].columns)
 
-data = pd.read_excel(url,sheet_name='GEE Estados',)
-data
+colunas_emissao = list(data.loc[:,1970:2021].columns)
 
-# data['Nível 1 - Setor'].unique()
+emissao = data.melt(id_vars = colunas_info, value_vars = colunas_emissao, var_name = 'Ano', value_name = 'Emissão')
