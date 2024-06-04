@@ -8,10 +8,13 @@ data_locacao.head()
 
 columns = list(data_locacao.columns)
 data_locacao = data_locacao.explode(columns[1:])
-data_locacao
+print(data_locacao)
 
 data_locacao.reset_index(drop=True,inplace=True)
 
 data_locacao['valor_aluguel'] = data_locacao['valor_aluguel'].apply(lambda x : x.replace('$','').replace(',','.').replace('reais',''))
 data_locacao['valor_aluguel'] = data_locacao['valor_aluguel'].astype(np.float64)
+data_locacao.head()
+
+data_locacao['apartamento'] = data_locacao['apartamento'].str.replace(' \(blocoAP\)', ' ',regex=True)
 data_locacao.head()

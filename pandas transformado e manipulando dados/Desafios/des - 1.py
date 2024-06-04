@@ -17,3 +17,7 @@ data_vendas.reset_index(drop=True,inplace=True)
 data_vendas['Valor da compra'] = data_vendas['Valor da compra'].apply(lambda x : x.replace('R$', '').replace(',','.'))
 data_vendas['Valor da compra'] = data_vendas['Valor da compra'].astype(np.float64)
 data_vendas.head()
+
+data_vendas['Cliente'] = data_vendas['Cliente'].str.lower()
+data_vendas['Cliente'] = data_vendas['Cliente'].str.replace('[^a-z]', ' ',regex=True).str.strip()
+data_vendas.head()

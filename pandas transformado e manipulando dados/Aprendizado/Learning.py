@@ -35,3 +35,6 @@ dados[['preco','taxa_limpeza','taxa_deposito']] = dados[['preco','taxa_limpeza',
 dados.head()
 
 print(dados)
+
+dados['descricao_local'] = dados['descricao_local'].str.lower()
+dados.head()
