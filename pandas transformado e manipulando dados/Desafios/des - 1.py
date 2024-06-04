@@ -21,3 +21,6 @@ data_vendas.head()
 data_vendas['Cliente'] = data_vendas['Cliente'].str.lower()
 data_vendas['Cliente'] = data_vendas['Cliente'].str.replace('[^a-z]', ' ',regex=True).str.strip()
 data_vendas.head()
+
+data_vendas['Data de venda'] = pd.to_datetime(data_vendas['Data de venda']).dt.strftime('%d/%m/%Y')
+data_vendas.head()

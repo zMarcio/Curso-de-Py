@@ -57,3 +57,23 @@ dados['descricao_vizinhanca'] = dados['descricao_vizinhanca'].str.replace('[^a-z
 dados['descricao_vizinhanca'] = dados['descricao_vizinhanca'].str.replace('(?<!\w)-(?!\w)', ' ',regex=True)
 dados['descricao_vizinhanca'] = dados['descricao_vizinhanca'].str.split()
 dados.head()
+
+data_moveis = pd.read_json(url_moveis)
+
+data_moveis.head()
+
+data_moveis.info()
+
+data_moveis['data'] = pd.to_datetime(data_moveis['data'])
+data_moveis.info()
+
+data_moveis.head()
+
+data_moveis['data'].dt.strftime('%Y-%m')
+
+subset = data_moveis.groupby(data_moveis['data'].dt.strftime('%Y-%m'))['vaga_disponivel'].sum()
+subset
+
+data_moveis['preco'].fillna('0.0', inplace=True)
+data_moveis['preco'] = data_moveis['preco'].astype(np.float64)
+data_moveis
