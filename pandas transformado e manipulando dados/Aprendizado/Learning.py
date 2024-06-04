@@ -11,9 +11,9 @@ dados = pd.json_normalize(dados['info_moveis'])
 dados.head()
 
 colunas = list(dados.columns)
-colunas
+print(colunas)
 dados = dados.explode(colunas[3:])
-dados
+print(dados)
 
 dados.reset_index(inplace=True,drop=True)
 dados.head()
@@ -28,15 +28,10 @@ dados[col_numericas] = dados[col_numericas].astype(np.int64)
 dados['avaliacao_geral'] = dados['avaliacao_geral'].astype(np.float64)
 dados.info()
 
-dados['preco'] = dados['preco'].apply(lambda x : x.replace('$', '').replace(',','').strip())
-dados['preco'] = dados['preco'].astype(np.float64)
+dados[['preco','taxa_limpeza','taxa_deposito']] = dados[['preco','taxa_limpeza','taxa_deposito']].applymap(lambda x : x.replace('$', '').replace(',','').strip()) # type: ignore
+dados[['preco','taxa_limpeza','taxa_deposito']] = dados[['preco','taxa_limpeza','taxa_deposito']].astype(np.float64)
 
-dados['taxa_limpeza'] = dados['taxa_limpeza'].apply(lambda x : x.replace('$', '').replace(',','').strip())
-dados['taxa_limpeza'] = dados['taxa_limpeza'].astype(np.float64)
-
-dados['taxa_deposito'] = dados['taxa_deposito'].apply(lambda x : x.replace('$', '').replace(',','').strip())
-dados['taxa_deposito'] = dados['taxa_deposito'].astype(np.float64)
 
 dados.head()
 
-dados
+print(dados)
