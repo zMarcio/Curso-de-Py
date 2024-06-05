@@ -35,3 +35,10 @@ index = data[data['conta.cobranca.Total'] == ' '].index
 
 data.loc[index, 'conta.cobranca.Total'] = data.loc[index, 'conta.cobranca.mensal'] * 24
 data.loc[index, 'conta.cobranca.Total']
+
+data.loc[index, 'cliente.tempo_servico'] = 24
+data.loc[index, 'cliente.tempo_servico']
+
+data.loc[index][
+    ['cliente.tempo_servico', 'conta.contrato','conta.cobranca.mensal','conta.cobranca.Total']
+]
