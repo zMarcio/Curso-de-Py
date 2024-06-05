@@ -53,3 +53,13 @@ for col in data.columns:
   print('-'*30)
 
   data.query("Churn == ''")
+
+data_dif = data[data['Churn'] != ''].copy()
+
+data_dif.info()
+
+data_dif.reset_index(drop=True,inplace=True)
+
+data_dif
+
+data_dif.duplicated()
