@@ -63,3 +63,23 @@ data_dif.reset_index(drop=True,inplace=True)
 data_dif
 
 data_dif.duplicated()
+
+data_dif.duplicated().sum()
+
+fil_duplicated = data_dif.duplicated()
+fil_duplicated
+
+data_dif[fil_duplicated]
+
+data_dif.drop_duplicates(inplace=True)
+data_dif.duplicated().sum()
+
+data_dif.isna()
+
+data_dif.isna().sum()
+
+data_dif.isna().sum().sum()
+
+data_dif[data_dif.isna().any(axis=1)]
+
+filtro = data_dif['cliente.tempo_servico'].isna()
