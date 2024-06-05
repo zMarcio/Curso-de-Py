@@ -32,3 +32,6 @@ data[data['conta.cobranca.Total'] == ' '][
 ]
 
 index = data[data['conta.cobranca.Total'] == ' '].index
+
+data.loc[index, 'conta.cobranca.Total'] = data.loc[index, 'conta.cobranca.mensal'] * 24
+data.loc[index, 'conta.cobranca.Total']
