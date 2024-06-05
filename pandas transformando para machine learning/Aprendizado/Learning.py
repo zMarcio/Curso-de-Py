@@ -42,3 +42,14 @@ data.loc[index, 'cliente.tempo_servico']
 data.loc[index][
     ['cliente.tempo_servico', 'conta.contrato','conta.cobranca.mensal','conta.cobranca.Total']
 ]
+
+data['conta.cobranca.Total'] = data['conta.cobranca.Total'].astype(np.float64)
+
+data.info()
+
+for col in data.columns:
+  print(f'Coluna: {col}')
+  print(data[col].unique())
+  print('-'*30)
+
+  data.query("Churn == ''")
