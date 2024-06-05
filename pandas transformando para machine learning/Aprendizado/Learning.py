@@ -83,3 +83,27 @@ data_dif.isna().sum().sum()
 data_dif[data_dif.isna().any(axis=1)]
 
 filtro = data_dif['cliente.tempo_servico'].isna()
+
+data_dif[filtro][['cliente.tempo_servico', 'conta.cobranca.mensal','conta.cobranca.Total']]
+
+data_dif['cliente.tempo_servico'].fillna(
+    np.ceil(
+        data_dif['conta.cobranca.Total'] / data_dif['conta.cobranca.mensal']
+    ), inplace=True
+)
+
+data_dif[filtro][['cliente.tempo_servico', 'conta.cobranca.mensal','conta.cobranca.Total']]
+
+data_dif.isna().sum()
+
+data_dif['conta.contrato'].value_counts()
+
+colunas_dropar = ['conta.contrato', 'conta.faturamente_eletronico', 'conta.metodo_pagamento']
+
+data_dif[colunas_dropar].isna().any(axis=1).sum()
+
+df_sem_nulo = data_dif.dropna(subset=colunas_dropar).copy()
+df_sem_nulo.head()
+
+df_sem_nulo.reset_index(drop=True,inplace=True)
+df_sem_nulo.isna().sum()
