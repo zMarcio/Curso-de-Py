@@ -26,3 +26,9 @@ data.head()
 
 
 data.info()
+
+data[data['conta.cobranca.Total'] == ' '][
+    ['cliente.tempo_servico', 'conta.contrato','conta.cobranca.mensal','conta.cobranca.Total']
+]
+
+index = data[data['conta.cobranca.Total'] == ' '].index
